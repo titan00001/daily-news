@@ -37,4 +37,28 @@ function getNews(){
     return data
 }
 
-module.exports = getNews;
+function deleteNews(news, topicToDelete){
+
+    for(key in news) {
+        if(topicToDelete.includes(key)) {
+            delete news[key];
+        }
+    }
+    return news
+}
+
+function getFilteredNews(news, topicRequired){
+
+    topicInNews = Object.keys(news)
+
+    for(key of topicRequired) {
+        topicInNews = topicInNews.filter(item => {
+            return item !== key
+        });
+    }
+
+    return deleteNews(news, topicInNews)
+
+}
+
+module.exports = { getNews, getFilteredNews };
