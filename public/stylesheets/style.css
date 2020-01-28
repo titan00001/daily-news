@@ -1,0 +1,16 @@
+body {
+  padding: 0;
+  font: 14px "Helvetica", Arial, sans-serif;
+}
+
+a {
+  color: rgb(21, 119, 204);
+  text-decoration: none;
+}
+
+.news-section {
+
+  background-color: rgb(153, 243, 141);
+  border: 1px dotted black;
+  padding-left: 5%;
+}

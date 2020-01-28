@@ -1,0 +1,22 @@
+<% if(name.constructor === Array)  { %>
+
+    <ol>
+        <% name.forEach(element => {     %>
+            <li>
+                <p><a href = "<%= element['href'] %>" > <%= element['title'] %> </a></p> 
+            </li>
+        <%  }); %>
+    </ol>
+
+<% } else if(typeof name === "object")   { %>
+
+    <% Object.keys(name).forEach(topic => { %>
+        <div class="news-section">
+            <h2><%= topic %> </h2>
+
+            <%- include('newsSection', {name: name[topic]}) %>
+        </div>
+
+<% }); } %> 
+
+

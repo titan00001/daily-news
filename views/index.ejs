@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+      <p>Content provided by The Times of India</p>
+    </header>
+
+    <hr>
+
+    <div>
+      <%- include('partials/newsSection', {name: newsJson}) %>
+    </div>
+    
+  </body>
+</html>
