@@ -107,6 +107,7 @@ dist
 .vscode-test
 
 
+# All data files
 european-news.json
 global-times.json
 ToiNews.json

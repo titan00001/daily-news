@@ -1,16 +1,17 @@
 body {
   padding: 0;
+  background-color: rgb(152, 221, 213);
   font: 14px "Helvetica", Arial, sans-serif;
+  color: rgb(8, 95, 114);
 }
 
 a {
-  color: rgb(21, 119, 204);
+  color: rgb(8, 95, 114);
   text-decoration: none;
 }
 
 .news-section {
 
-  background-color: rgb(153, 243, 141);
   border: 1px dotted black;
   padding: 2% 0 2% 4%;
 }
