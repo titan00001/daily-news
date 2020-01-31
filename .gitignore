@@ -105,3 +105,9 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+
+
+european-news.json
+global-times.json
+ToiNews.json
+usa-today.json
