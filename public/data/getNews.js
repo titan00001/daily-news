@@ -1,11 +1,11 @@
 
-
 function runScrapper() { 
       
     // Use child_process.spawn method from  
     // child_process module and assign it 
     // to variable spawn 
-    var spawn = require("child_process").spawn; 
+
+    // var spawn = require("child_process").spawn; 
       
     // Parameters passed in spawn - 
     // 1. type_of_script 
@@ -14,26 +14,52 @@ function runScrapper() {
       
     // E.g : http://localhost:3000/name?firstname=Mike&lastname=Will 
     // so, first name = Mike and last name = Will 
-    var scrapper = spawn('py', ["public/data/Scrapper.py"]); 
+
+    for (script of ['Scrapper.py', 'usa-today-scrapper.py', 'euronews-scrapper.py', 'Global-times-china-scrapper.py']) {
+
+        console.log(script)
+
+        var spawn = require("child_process").spawn; 
+        scriptPath = 'public/python-scripts/' + script;
+
+        var scrapper = spawn('py', [scriptPath]); 
   
-    // Takes stdout data from script which executed 
-    // with arguments and send this data to res object
+        // Takes stdout data from script which executed 
+        // with arguments and send this data to res object
 
-    scrapper.stderr.pipe(process.stderr)
+        scrapper.stderr.pipe(process.stderr)
 
-    scrapper.stdout.pipe(process.stdout)
+        scrapper.stdout.pipe(process.stdout)
+    }
+    
 
     return 1
 } 
 
+// european-news.json   global-times.json   usa-today.json
 
-function getNews(){
+function getNews(country){
 
     var data = {}
 
-    if(runScrapper() === 1){
-        data = require("./ToiNews.json")
+    switch (country) {
+        case 'India': data = require("./ToiNews.json");
+            break;
+        
+        case 'China': data = require("./global-times.json");
+        break;
+
+        case 'US': data = require("./usa-today.json");
+            break;
+
+        case 'EU': data = require("./european-news.json");
+            break;
+    
+        default:
+            break;
     }
+
+
     return data
 }
 
@@ -61,4 +87,4 @@ function getFilteredNews(news, topicRequired){
 
 }
 
-module.exports = { getNews, getFilteredNews };
+module.exports = { getNews, getFilteredNews, runScrapper };
