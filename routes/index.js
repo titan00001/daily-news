@@ -61,4 +61,11 @@ router.get('/EU', function(req, res, next) {
 
 })
 
+router.get('/Economics', function(req, res, next) {
+
+  news = getNews('Economics')
+  res.render('index', { title: 'Euro-news', newsJson: news });
+
+})
+
 module.exports = router;

@@ -1,3 +1,9 @@
+// for adding python-scrapper:
+// 1. Add script in python-scripts folder
+// 2. Update the list in for loop
+// 3. Add case in switch
+// 4. Change the path name of json file to public/data/MyJsonFile.json
+// 5. To change frontend Add link to navbar in header in index.ejs
 
 function runScrapper() { 
       
@@ -15,7 +21,7 @@ function runScrapper() {
     // E.g : http://localhost:3000/name?firstname=Mike&lastname=Will 
     // so, first name = Mike and last name = Will 
 
-    for (script of ['Scrapper.py', 'usa-today-scrapper.py', 'euronews-scrapper.py', 'Global-times-china-scrapper.py']) {
+    for (script of ['Scrapper.py', 'usa-today-scrapper.py', 'euronews-scrapper.py', 'Global-times-china-scrapper.py', 'money-control.py']) {
 
         console.log(script)
 
@@ -53,6 +59,9 @@ function getNews(country){
             break;
 
         case 'EU': data = require("./european-news.json");
+            break;
+
+        case 'Economics': data = require('./money-control-economic.json')
             break;
     
         default:
