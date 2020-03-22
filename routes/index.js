@@ -7,7 +7,7 @@ const {getNews, getFilteredNews, runScrapper } = require("../public/data/getNews
 router.get('/', function(req, res, next) {
 
     news = getNews('India')
-    res.render('index', { title: 'Daily News', newsJson: news });
+    res.render('index', { title: 'Times of India', newsJson: news });
   
 });
 
@@ -64,7 +64,7 @@ router.get('/EU', function(req, res, next) {
 router.get('/Economics', function(req, res, next) {
 
   news = getNews('Economics')
-  res.render('index', { title: 'Euro-news', newsJson: news });
+  res.render('index', { title: 'Moneycontrol', newsJson: news });
 
 })
 

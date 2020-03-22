@@ -7,19 +7,18 @@
   <body>
     <header>
       <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
-      <p>Content provided by The Times of India</p>
-      <nav>
-        <a href="/">India</a>
-        <a href="/China">China</a>
-        <a href="/US">USA</a>
-        <a href="/EU">EU</a>
-        <a href="/Economics">Economics Money Control</a>
-        <a href="/refresh">Refresh</a>
+      
+      
+      <nav class="navbar">
+        <a class="link" href="/">India</a>
+        <a class="link" href="/China">China</a>
+        <a class="link" href="/US">USA</a>
+        <a class="link" href="/EU">EU</a>
+        <a class="link" href="/Economics">Economics Money Control</a>
+        <a class="link" href="/refresh">Refresh</a>
       </nav>
     </header>
 
-    <hr>
 
     <div>
       <%- include('partials/newsSection', {name: newsJson}) %>

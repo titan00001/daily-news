@@ -85,7 +85,7 @@ def formatData(news):
     newsByTopic['timesofindia.indiatimes.com'] = classifyTOINewsByTopic(newsByTopic['timesofindia.indiatimes.com'])
     
 
-    topicList = ['world', 'sports', 'city', 'entertainment', 'home', 'elections']
+    topicList = ['world', 'sports', 'city', 'entertainment', 'home']
     for topic in topicList:
         newsByTopic['timesofindia.indiatimes.com'][topic] = listToDict(newsByTopic['timesofindia.indiatimes.com'][topic], 4)
 

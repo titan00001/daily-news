@@ -1,17 +1,45 @@
+:root {
+
+  --main-color-1 : #093145;
+  --main-color-2 : #3C6478;
+  --main-color-3 : #EBF2EB;
+
+}
+
+
 body {
   padding: 0;
-  background-color: rgb(152, 221, 213);
-  font: 14px "Helvetica", Arial, sans-serif;
-  color: rgb(8, 95, 114);
+  background-color: var(--main-color-1);
+  font: 18px "Helvetica", Arial, sans-serif;
+  color: var(--main-color-3);
+}
+
+header {
+  background-color: var(--main-color-3);
+  color: var(--main-color-1);
+  padding: 5px;
+}
+
+.link {
+
+  padding: 5px 10px;
+  background-color: var(--main-color-1);
+  color: var(--main-color-3);
+
+}
+
+.link:active, .link:hover {
+  background-color: var(--main-color-3);
+  color: var(--main-color-1);
 }
 
 a {
-  color: rgb(8, 95, 114);
+  color: var(--main-color-3);
   text-decoration: none;
 }
 
 .news-section {
 
-  border: 1px dotted black;
+  border: 1px solid var(--main-color-3);
   padding: 2% 0 2% 4%;
 }
